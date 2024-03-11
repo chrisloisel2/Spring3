@@ -14,4 +14,10 @@ Etape 3: Repository
     Utilisez Spring Data JPA pour créer des interfaces repository pour vos entités.
     Ces repositories serviront à simplifier les opérations CRUD sur les entités.
 
+Etape 4: Création des services
+
+    Créez des services pour encapsuler la logique métier de gestion des livres et des emprunts.
+    Les services utiliseront les repositories pour interagir avec la base de données.
+
+
 

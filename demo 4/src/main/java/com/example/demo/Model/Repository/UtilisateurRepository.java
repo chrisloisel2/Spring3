@@ -1,18 +1,10 @@
-package com.example.demo.Model;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import com.example.demo.Model.Entity.Emprunt;
-import com.example.demo.Model.Entity.Livre;
+import com.example.demo.Model.Entity.Utilisateur;
 
+@Repository
 public interface UtilisateurRepository extends CrudRepository<Utilisateur, Long> {
-
-}
-
-public interface LivreRepository extends CrudRepository<Livre, Long> {
-
-}
-
-public interface EmpruntRepository extends CrudRepository<Emprunt, Long> {
 
 }
