@@ -16,9 +16,9 @@ TP 2: Gestion des Tâches
 		vous viendrez juste stocker les tâches dans une liste en mémoire.
 		Les méthodes du contrôleur devront ètre :
 			- GET /tasks : retourne la liste des tâches
-			- GET /tasks/{id} : retourne une tâche par son id
+			 // Facultatif - GET /tasks/{id} : retourne une tâche par son id
 			- POST /tasks : crée une nouvelle tâche
-			- PUT /tasks/{id} : met à jour une tâche
+			 // Facultatif - PUT /tasks/{id} : met à jour une tâche
 			- DELETE /tasks/{id} : supprime une tâche
 		Tester les différentes routes avec un client HTTP (Postman ou curl).
 
