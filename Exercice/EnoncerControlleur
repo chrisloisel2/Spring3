@@ -19,7 +19,7 @@ TP 2: Gestion des Tâches
 			 // Facultatif - GET /tasks/{id} : retourne une tâche par son id
 			- POST /tasks : crée une nouvelle tâche
 			 // Facultatif - PUT /tasks/{id} : met à jour une tâche
-			- DELETE /tasks/{id} : supprime une tâche
+			// facultatif - DELETE /tasks/{id} : supprime une tâche
 		Tester les différentes routes avec un client HTTP (Postman ou curl).
 
 TP 3: Gestion des Utilisateurs
