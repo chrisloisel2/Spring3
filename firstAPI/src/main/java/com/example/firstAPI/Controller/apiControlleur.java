@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,16 +31,16 @@ public class apiControlleur {
 		return sport.add(body);
 	}
 	
-	@PutMapping("/sports")
-	public String getAllSpor()
+	@PutMapping("/sports/{id}")
+	public String getAllSpor(@RequestBody String body, @PathVariable Integer id)
 	{
-		return "PUT done";
+		return sport.UpdateData(id, body);
 	}
 	
-	@DeleteMapping("/sports")
-	public String getAllSp()
+	@DeleteMapping("/sports/{id}")
+	public String getAllSp(@PathVariable Integer id)
 	{
-		return "Delete";
+		return sport.DeleteData(id);
 	}
 
 }

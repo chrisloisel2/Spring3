@@ -20,5 +20,17 @@ public class SportService {
 	{
 		return this.data;
 	}
+	
+	public String UpdateData(Integer index, String data)
+	{
+		this.data.set(index, data);
+		return data;
+	}
+	
+	public String DeleteData(Integer index)
+	{
+		this.data.remove(index);
+		return "";
+	}
 
 }
