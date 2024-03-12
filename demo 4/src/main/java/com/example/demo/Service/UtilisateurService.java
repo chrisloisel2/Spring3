@@ -8,10 +8,12 @@ import com.example.demo.Model.Repository.UtilisateurRepository;
 
 // ctr + shift + o pour generer les imports
 
-@Service
+@Service // bean
 public class UtilisateurService {
 	private UtilisateurRepository userR;
 	
+	
+	// Constructeur
 	@Autowired
 	public UtilisateurService(UtilisateurRepository userRepo)
 	{
