@@ -43,7 +43,7 @@ Initialisation du Projet :
 
     Utilisez Spring Initializr pour créer un nouveau projet Spring Boot.
     Choisissez Maven comme système de build, Java comme langage, et la dernière version de Spring Boot disponible.
-    Ajoutez les dépendances suivantes : Spring Web, Spring Data JPA, H2 Database, Spring Security.
+    Ajoutez les dépendances suivantes : Spring Web, Spring Data JPA, mysql Database, Spring Security.
     Générez le projet et importez-le dans votre IDE.
 
 Création du Modèle de Données :
