@@ -1,0 +1,11 @@
+<div class="obj">
+	<div class="obj__img">
+		<img [src]="item.photo" alt="item.name">
+	</div>
+	<div class="obj__info">
+		<h3>{{item.name}}</h3>
+		<p>{{item.Category}}</p>
+		<p>{{item.price}}</p>
+		<button [hidden]="this.users.connected" (click)="addToCart(item)">Add to cart</button>
+	</div>
+</div>
