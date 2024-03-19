@@ -68,11 +68,15 @@ Création du Controller :
 7. Gestion des Utilisateurs :
 
     Modèle Utilisateur : Créez une entité Utilisateur avec les attributs suivants : id (Long), nom (String), email (String), mot de passe (String), et rôle (String). Le rôle déterminera si l'utilisateur est un client ou un administrateur.
+	
     Repository Utilisateur : Créez une interface UtilisateurRepository qui étend JpaRepository pour gérer les opérations CRUD sur les utilisateurs.
+
     Controller Utilisateur : Créez un controller UtilisateurController avec des endpoints pour l'inscription et la connexion des utilisateurs. Utilisez l'encodage des mots de passe pour sécuriser les mots de passe des utilisateurs.
 
 8. Fonctionnalité d'Achat :
 
     Modèle Commande : Créez une entité Commande qui contient les informations sur les achats des utilisateurs, incluant un id (Long), une référence à l'utilisateur (relation), un ensemble de produits (relation), et le total de la commande (double).
+
     Repository Commande : Créez une interface CommandeRepository qui étend JpaRepository pour gérer les opérations CRUD sur les commandes.
+
     Controller Commande : Créez un controller CommandeController avec un endpoint pour créer une commande. Cet endpoint devrait accepter une liste de produits et un identifiant d'utilisateur, calculer le total de la commande, réduire les stocks des produits achetés, et sauvegarder la commande.

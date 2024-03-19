@@ -14,8 +14,7 @@ public class UserEntity {
 	public Long id;
 	
 	private String name;
-	private String email;
-	private Integer credit;
+	private String password;
 	
 	public Long getId() {
 		return id;
@@ -32,20 +31,14 @@ public class UserEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getEmail() {
-		return email;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
-	public Integer getCredit() {
-		return credit;
-	}
-	
-	public void setCredit(Integer credit) {
-		this.credit = credit;
-	}
 }

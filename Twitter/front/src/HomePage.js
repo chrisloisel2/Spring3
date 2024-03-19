@@ -17,7 +17,11 @@ const HomePage = () => {
 
 	useEffect(() => {
 		if (!user) {
-			navigate('/');
+			setUser(JSON.parse({
+				_id: "60f9b2d4e7a0c0e5b8f6a5f7",
+				username: "Utilisateur Anonyme",
+				email: "",
+			}));
 		}
 		const newSocket = io('http://localhost:3050', { withCredentials: false });
 		setSocket(newSocket);

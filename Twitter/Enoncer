@@ -43,7 +43,7 @@ Gestion des Utilisateurs
 
 Authentification
 
-    POST /user/login : Authentifier un utilisateur. Vérifie les informations de connexion (username et password) et retourne un token ou une session valide si les informations sont correctes.
+    POST /user/login : Authentifier un utilisateur. Vérifie les informations de connexion (username et password).
 
 Gestion des Messages
 

@@ -1,5 +1,6 @@
 package com.example.ExempleAPIBDD.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,27 +10,26 @@ import com.example.ExempleAPIBDD.Model.Entity.UserEntity;
 import com.example.ExempleAPIBDD.Model.Repository.UserRepository;
 
 @Service
-public class UserService<T, Trepo> {
-	// Crud
+public class UserService {
 	
-	public Trepo repo;
+	public UserRepository repo;
 	
-	public UserService(Trepo dependance)
+	public UserService(UserRepository dependance)
 	{
 		this.repo = dependance;
 	}
 
-	public Iterable<T> getAll()
+	public Iterable<UserEntity> getAll()
 	{
 		return this.repo.findAll();
 	}
 	
-	public Optional<T> getById(Long id)
+	public Optional<UserEntity> getById(Long id)
 	{
 		return this.repo.findById(id);
 	}
 	
-	public UserEntity UpdateById(Long id, T data)
+	public UserEntity UpdateById(Long id, UserEntity data)
 	{
 		UserEntity user = this.repo.findById(id).get();
 		
@@ -40,7 +40,20 @@ public class UserService<T, Trepo> {
 		return this.repo.save(user);
 	}
 	
-	public UserEntity AddUser(T data)
+	
+	
+	public Optional<UserEntity> FindUser(UserEntity data)
+	{
+		List<UserEntity> listUser = (List<UserEntity>) this.getAll();
+		
+		
+		return listUser.stream()
+                .filter((user) -> user.getName().equals(data.getName()))
+                .findFirst();
+			}
+	
+	
+	public UserEntity AddUser(UserEntity data)
 	{
 		return this.repo.save(data);
 	}
