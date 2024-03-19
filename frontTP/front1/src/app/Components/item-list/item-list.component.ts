@@ -12,7 +12,9 @@ import { Item } from '../../Model/Item';
   styleUrl: './item-list.component.css'
 })
 export class ItemListComponent implements OnChanges {
-	constructor(public items : ItemService) { }
+	constructor(public items : ItemService) {
+		this.getItems();
+	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.getItems();
@@ -22,7 +24,7 @@ export class ItemListComponent implements OnChanges {
 
 	getItems() {
 		this.items.getItems().subscribe((data) => {
-			console.log(data);
+			this.itemsList = data;
 		});
 	}
 }

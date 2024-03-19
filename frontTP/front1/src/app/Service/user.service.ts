@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http : HttpClient) { }
 
-  serviceURL = 'http://localhost:3050/users';
+  serviceURL = 'http://localhost:3000/users';
 
   connected : boolean = false;
   currentUser : User | null = null;

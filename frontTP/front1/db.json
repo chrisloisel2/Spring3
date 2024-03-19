@@ -1,0 +1,36 @@
+{
+	"users": [
+	  {
+		"id": 1,
+		"name": "John Doe",
+		"email": "johndoe@example.com",
+		"password": "hashed_password",
+		"age": 30,
+		"panier": 1
+	  }
+	],
+	"items": [
+	  {
+		"id": 1,
+		"name": "Item 1",
+		"photo": "url_to_photo",
+		"price": 100,
+		"quantity": 10,
+		"Category": "Category 1"
+	  },
+	  {
+		"id": 2,
+		"name": "Item 2",
+		"photo": "url_to_photo",
+		"price": 150,
+		"quantity": 5,
+		"Category": "Category 2"
+	  }
+	],
+	"paniers": [
+	  {
+		"id": 1,
+		"items": [1, 2]
+	  }
+	]
+  }

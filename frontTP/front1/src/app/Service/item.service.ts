@@ -10,7 +10,7 @@ export class ItemService {
 
   constructor(public http : HttpClient) { }
 
-  serviceURL = 'http://localhost:3050/items';
+  serviceURL = 'http://localhost:3000/items';
   // crud operations
 
   // get all items
