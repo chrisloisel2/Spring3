@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LogsDTO } from '../../Model/logsDTO';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../Service/user.service';
+import { UserDTO } from '../../Model/UserDTO';
 
 @Component({
   selector: 'app-inscription',
@@ -15,17 +16,23 @@ export class InscriptionComponent {
 
 	public connectionForm = this.fb.group({
 		name: ['', [Validators.required]],
-		password: ['', [Validators.required]]
+		password: ['', [Validators.required]],
+		age: [0, [Validators.required]],
+		email: ['', [Validators.required]]
 	});
 
 	onSubmit() {
 		console.log(this.connectionForm.value);
 
-		let user : LogsDTO = {
-			name: this.connectionForm.value.name,
-			password: this.connectionForm.value.password
-		}
+		let user : UserDTO = {
+			id : 0,
+			name : this.connectionForm.value.name,
+			email : this.connectionForm.value.email,
+			password : this.connectionForm.value.password,
+			age : this.connectionForm.value.age,
+			panier : 0
+		};
 
-		this.user.connectUser(user);
+		this.user.inscription(user);
 	}
 }

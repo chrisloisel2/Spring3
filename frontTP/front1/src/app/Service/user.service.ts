@@ -44,6 +44,14 @@ export class UserService {
 	  }
 	);
   }
+  inscription(user : LogsDTO) {
+	this.http.post<User>(this.serviceURL + '/register', user).subscribe(
+	  (data) => {
+		console.log(data);
+	  }
+	);
+  }
+
 
   // Disconnect user
   disconnectUser() {
