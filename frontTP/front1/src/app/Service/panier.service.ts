@@ -31,7 +31,11 @@ export class PanierService {
 		}
 	  }
 	);
-	  }
+	}
+
+	findPanier(id : number) {
+		return this.http.get<Panier>(this.serviceURL + '/items/' + id)
+	}
 
 
   removePanier(item : Item) {
