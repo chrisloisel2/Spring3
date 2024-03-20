@@ -6,18 +6,29 @@ import { LogsDTO } from '../Model/logsDTO';
 import { Item } from '../Model/Item';
 import { User } from '../Model/User';
 import { PanierService } from './panier.service';
+import { Panier } from '../Model/Panier';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http : HttpClient, private panierService : PanierService) { }
+  constructor(private http : HttpClient) { }
 
   serviceURL = 'http://localhost:3000/users';
 
   connected : boolean = false;
   currentUser : User | null = null;
+
+  getPanier(id : number) {
+	this.http.get<Panier>("'http://localhost:3000/panier'" + '/' + id).subscribe(
+	  (data) => {
+		if (this.currentUser) {
+		  this.currentUser.panier = data;
+		}
+	  }
+	);
+	  }
 
   // update user
   updateUser(user: User) : Observable<User> {
@@ -42,7 +53,7 @@ export class UserService {
 	  (data) => {
 		this.currentUser = data;
 		this.connected = true;
-		this.panierService.getPanier(this.currentUser.panier.id);
+		this.getPanier(this.currentUser.panier.id);
 	  }
 	);
   }
