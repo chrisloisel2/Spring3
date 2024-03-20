@@ -14,7 +14,7 @@ export class PanierService {
   serviceURL = 'http://localhost:3000/panier';
 
   addPanier(item : Item) {
-	this.http.post<Panier>(this.serviceURL + '/add' + this.user.currentUser?.panier.id, item).subscribe(
+	this.http.post<Panier>(this.serviceURL + '/' + this.user.currentUser?.panier.id, item).subscribe(
 	  (data) => {
 		if (this.user.currentUser) {
 		  this.user.currentUser.panier = data;
@@ -22,6 +22,17 @@ export class PanierService {
 	  }
 	);
   }
+
+  getPanier(id : number) {
+	this.http.get<Panier>(this.serviceURL + '/' + id).subscribe(
+	  (data) => {
+		if (this.user.currentUser) {
+		  this.user.currentUser.panier = data;
+		}
+	  }
+	);
+	  }
+
 
   removePanier(item : Item) {
 	this.http.post<Panier>(this.serviceURL + '/remove' + this.user.currentUser?.panier.id, item).subscribe(

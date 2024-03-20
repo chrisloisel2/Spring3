@@ -5,13 +5,14 @@ import { UserDTO } from '../Model/UserDTO';
 import { LogsDTO } from '../Model/logsDTO';
 import { Item } from '../Model/Item';
 import { User } from '../Model/User';
+import { PanierService } from './panier.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private panierService : PanierService) { }
 
   serviceURL = 'http://localhost:3000/users';
 
@@ -41,6 +42,7 @@ export class UserService {
 	  (data) => {
 		this.currentUser = data;
 		this.connected = true;
+		this.panierService.getPanier(this.currentUser.panier.id);
 	  }
 	);
   }
