@@ -49,11 +49,18 @@ export class UserService {
 
   // Connect user
   connectUser(user : LogsDTO)  {
-	this.http.post<User>(this.serviceURL + '/login', user).subscribe(
+	this.http.post<UserDTO>(this.serviceURL + '/login', user).subscribe(
 	  (data) => {
-		this.currentUser = data;
+		this.currentUser = {
+		  id : data.id!,
+		  name : data.name!,
+		  email : data.email!,
+		  password : data.password!,
+		  age : data.age!,
+		  panier : {id : data.panier!} as Panier
+		};
 		this.connected = true;
-		this.getPanier(data.id);
+		this.getPanier(data.panier!);
 	  }
 	);
   }
