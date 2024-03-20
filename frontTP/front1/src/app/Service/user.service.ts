@@ -21,7 +21,7 @@ export class UserService {
   currentUser : User | null = null;
 
   getPanier(id : number) {
-	this.http.get<Panier>("'http://localhost:3000/panier'" + '/' + id).subscribe(
+	this.http.get<Panier>("http://localhost:3000/panier" + '/' + id).subscribe(
 	  (data) => {
 		if (this.currentUser) {
 		  this.currentUser.panier = data;
@@ -53,7 +53,7 @@ export class UserService {
 	  (data) => {
 		this.currentUser = data;
 		this.connected = true;
-		this.getPanier(this.currentUser.panier.id);
+		this.getPanier(data.id);
 	  }
 	);
   }
