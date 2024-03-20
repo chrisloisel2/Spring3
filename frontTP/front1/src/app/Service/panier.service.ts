@@ -11,7 +11,7 @@ export class PanierService {
 
   constructor(public http : HttpClient, public user : UserService) { }
 
-  serviceURL = 'http://localhost:3000/panier';
+  serviceURL = 'http://localhost:3000/paniers';
 
   addPanier(item : Item) {
 	this.http.post<Panier>(this.serviceURL + '/' + this.user.currentUser?.panier.id, item).subscribe(
